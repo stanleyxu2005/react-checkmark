@@ -1,0 +1,15 @@
+{
+  "name": "react-checkmark",
+  "description": "Animated checkmark for React",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/stanleyxu2005/react-checkmark",
+  "author": "Qian Xu (https://github.com/stanleyxu2005)",
+  "main": "src/checkmark.js",
+  "files": [
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "src"
+  ]
+}
