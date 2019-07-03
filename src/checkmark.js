@@ -5,14 +5,25 @@
  */
 
 import React from 'react';
-import './checkmark.css';
+import './checkmark.less';
+
+export const namedSizes = {
+  small: 16,
+  medium: 24,
+  large: 52,
+  xLarge: 72,
+  xxLarge: 96,
+};
 
 export const Checkmark = ({ size }) => {
+  const actualSize = namedSizes[size] || size;
+  const style = { width: actualSize, height: actualSize };
+
   return (
     <svg
       className='checkmark'
       xmlns='http://www.w3.org/2000/svg'
-      style={{ width: size, height: size }}
+      style={style}
       viewBox='0 0 52 52'
     >
       <circle className='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
@@ -22,5 +33,5 @@ export const Checkmark = ({ size }) => {
 };
 
 Checkmark.defaultProps = {
-  size: 52,
+  size: 'large',
 };

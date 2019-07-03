@@ -1,2 +1,4 @@
-.idea
-.VSCode
+/.idea
+/.VSCode
+
+/dist

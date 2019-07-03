@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "curly": [2, "multi-line"],
+    "quotes": [2, "single", "avoid-escape"],
+    "react/display-name": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-sort-prop-types": 0,
+    "semi": 0,
+    "strict": 0
+  }
+}
