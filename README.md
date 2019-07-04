@@ -1,7 +1,9 @@
 # react-checkmark
 Animated checkmark for React
 
-Example
+[**See Live Demo**](http://mmjd.com/github/react-checkmark/)
+
+**Code Example**
 ```javascript
 import {Checkmark} from 'react-checkmark';
 
