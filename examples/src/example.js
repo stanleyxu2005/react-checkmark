@@ -10,7 +10,7 @@ export const App = () => {
     <div>
       {sizes.map((size) => {
         return (
-          <div>
+          <div className={'showcase'}>
             <h3>size={size}</h3>
             <Checkmark size={size} />
           </div>
