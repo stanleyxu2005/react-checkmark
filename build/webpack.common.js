@@ -6,19 +6,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        include: [path.resolve(rootDir, 'src'), path.resolve(rootDir, 'examples/src')],
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['es2015', 'react'],
-            },
-          },
-          {
-            loader: 'eslint-loader',
-          },
-        ],
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.less$/,
@@ -33,7 +25,7 @@ module.exports = {
             loader: 'less-loader', // compiles Less to CSS
           },
         ],
-      },
+      }
     ],
   },
 

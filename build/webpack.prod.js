@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const rootDir = path.resolve(__dirname, '..');
 
 module.exports = Merge(CommonConfig, {
@@ -27,19 +28,13 @@ module.exports = Merge(CommonConfig, {
       minimize: true,
       debug: false,
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      include: /\.min\.js$/,
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true,
-      },
-      compress: {
-        screw_ie8: true,
-      },
-      comments: false,
-    }),
   ],
+
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin(),
+    ],
+  },
 
   externals: {
     react: {

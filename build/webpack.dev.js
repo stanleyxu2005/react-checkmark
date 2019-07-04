@@ -22,35 +22,35 @@ module.exports = Merge(CommonConfig, {
 
   // module: {
   //   rules: [
-  //     {
-  //       test: /\.less$/,
-  //       use: [
-  //         {
-  //           loader: 'style-loader', // creates style nodes from JS strings
-  //         },
-  //         {
-  //           loader: 'css-loader', // translates CSS into CommonJS
-  //         },
-  //         {
-  //           loader: 'less-loader', // compiles Less to CSS
-  //         },
-  //       ],
-  //     },
+      //     {
+      //       test: /\.less$/,
+      //       use: [
+      //         {
+      //           loader: 'style-loader', // creates style nodes from JS strings
+      //         },
+      //         {
+      //           loader: 'css-loader', // translates CSS into CommonJS
+      //         },
+      //         {
+      //           loader: 'less-loader', // compiles Less to CSS
+      //         },
+      //       ],
+      //     },
   //   ],
   // },
 
   plugins: [
     new CleanWebpackPlugin(['./examples/build']),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-
-      // filename: "vendor.js"
-      // (Give the chunk a different name)
-
-      minChunks: Infinity,
-      // (with more entries, this ensures that no other module
-      //  goes into the vendor chunk)
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //
+    //   // filename: "vendor.js"
+    //   // (Give the chunk a different name)
+    //
+    //   minChunks: Infinity,
+    //   // (with more entries, this ensures that no other module
+    //   //  goes into the vendor chunk)
+    // }),
   ],
 
   devServer: {
