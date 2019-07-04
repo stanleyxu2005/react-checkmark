@@ -6,5 +6,6 @@ Example
 import {Checkmark} from 'react-checkmark';
 
 // In your JSX
+<Checkmark size='large'/>
 <Checkmark size={80}/>
 ```
