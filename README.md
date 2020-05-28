@@ -1,13 +1,24 @@
-# react-checkmark
-Animated checkmark for React
+# react-typescript-checkmark
 
-[**See Live Demo**](http://mmjd.com/github/react-checkmark/)
+This is an animated checkmark in React with TypeScript. This is a fork of a previous project that lacked TypeScript, optional colors, and a few minor props.
 
-**Code Example**
+**Using this component:**
+
 ```javascript
-import {Checkmark} from 'react-checkmark';
+import { Checkmark } from 'react-typescript-checkmark';
 
-// In your JSX
-<Checkmark size='large'/>
-<Checkmark size={80}/>
+const ExampleComponent = () => {
+    
+  return <Checkmark size='large' />;
+};
+
 ```
+
+**API**
+
+Component props:
+
+size?: Sizes | number;
+visible?: boolean;
+className?: string;
+

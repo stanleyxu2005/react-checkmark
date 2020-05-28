@@ -6,11 +6,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
       },
       {
         test: /\.less$/,
@@ -25,9 +23,11 @@ module.exports = {
             loader: 'less-loader', // compiles Less to CSS
           },
         ],
-      }
+      },
     ],
   },
-
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
   devtool: 'cheap-module-source-map',
 };

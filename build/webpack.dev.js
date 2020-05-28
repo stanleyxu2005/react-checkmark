@@ -10,7 +10,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = Merge(CommonConfig, {
   entry: {
     vendor: ['react', 'react-dom'],
-    app: './examples/src/example.js',
+    app: './examples/src/example.tsx',
   },
 
   output: {
@@ -20,38 +20,7 @@ module.exports = Merge(CommonConfig, {
     sourceMapFilename: '[name].map',
   },
 
-  // module: {
-  //   rules: [
-      //     {
-      //       test: /\.less$/,
-      //       use: [
-      //         {
-      //           loader: 'style-loader', // creates style nodes from JS strings
-      //         },
-      //         {
-      //           loader: 'css-loader', // translates CSS into CommonJS
-      //         },
-      //         {
-      //           loader: 'less-loader', // compiles Less to CSS
-      //         },
-      //       ],
-      //     },
-  //   ],
-  // },
-
-  plugins: [
-    new CleanWebpackPlugin(['./examples/build']),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //
-    //   // filename: "vendor.js"
-    //   // (Give the chunk a different name)
-    //
-    //   minChunks: Infinity,
-    //   // (with more entries, this ensures that no other module
-    //   //  goes into the vendor chunk)
-    // }),
-  ],
+  plugins: [new CleanWebpackPlugin(['./examples/build'])],
 
   devServer: {
     port: 8000,
