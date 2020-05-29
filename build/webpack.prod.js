@@ -16,9 +16,9 @@ module.exports = Merge(CommonConfig, {
 
   output: {
     path: path.resolve(rootDir, 'dist'),
-    filename: '[name].tsx',
+    filename: '[name].jsx',
     sourceMapFilename: '[name].map',
-    library: 'reactCheckmark',
+    library: 'reactTypescriptCheckmark',
     libraryTarget: 'umd',
   },
 
@@ -41,14 +41,5 @@ module.exports = Merge(CommonConfig, {
       amd: 'react',
       root: 'react',
     },
-    'prop-types': {
-      commonjs: 'prop-types',
-      commonjs2: 'prop-types',
-      amd: 'prop-types',
-      root: 'prop-types',
-    },
   },
 });
-
-
-  

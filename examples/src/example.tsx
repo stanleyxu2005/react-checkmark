@@ -12,7 +12,7 @@ export const App = () => {
         return (
           <div style={{ marginBottom: '45px' }} key={sizes[index]}>
             <h3>{size}</h3>
-            <Checkmark size={size} />
+            <Checkmark size={size} backgroundColor='black' />
           </div>
         );
       })}

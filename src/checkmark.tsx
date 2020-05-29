@@ -1,19 +1,20 @@
 import React from 'react';
-//import './checkmark.less';
 import styled from 'styled-components';
 
-const bgColor = '#7ac142';
-const arrowColor = '#fff';
-const arrowThickness = 5;
+interface StyledProps {
+  backgroundColor: string;
+  checkColor: string;
+  checkThickness: number;
+}
 
-const StyledSVG = styled.div`
+const StyledSVG = styled.div<Props>`
   .checkmark {
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-    stroke: #fff;
-    stroke-width: 5;
+    stroke: ${(props) => props.checkColor};
+    stroke-width: ${(props) => props.checkThickness};
     stroke-miterlimit: 10;
     animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
   }
@@ -21,9 +22,9 @@ const StyledSVG = styled.div`
   .checkmark__circle {
     stroke-dasharray: 166;
     stroke-dashoffset: 166;
-    stroke-width: 5;
+    stroke-width: ${(props) => props.checkThickness};
     stroke-miterlimit: 10;
-    stroke: #7ac142;
+    stroke: ${(props) => props.backgroundColor};
     fill: none;
     animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
   }
@@ -53,7 +54,7 @@ const StyledSVG = styled.div`
 
   @keyframes fill {
     100% {
-      box-shadow: inset 0 0 0 100vh #7ac142;
+      box-shadow: inset 0 0 0 100vh ${(props) => props.backgroundColor};
     }
   }
 `;
@@ -69,20 +70,30 @@ export const sizes = {
 
 export type Sizes = keyof typeof sizes;
 
-interface Props {
+interface Props extends Partial<StyledProps> {
   size?: Sizes | number;
   visible?: boolean;
   className?: string;
 }
 
-const Checkmark = ({ size = 'lg', visible = true, className }: Props) => {
+const Checkmark = ({
+  size = 'lg',
+  visible = true,
+  backgroundColor = '#7ac142',
+  checkColor = '#FFF',
+  checkThickness = 5,
+}: Props) => {
   const selectedSize = typeof size === 'number' ? size : sizes[size];
   const style = { width: selectedSize, height: selectedSize };
 
   if (!visible) return <></>;
 
   return (
-    <StyledSVG>
+    <StyledSVG
+      backgroundColor={backgroundColor}
+      checkColor={checkColor}
+      checkThickness={checkThickness}
+    >
       <svg
         className='checkmark'
         xmlns='http://www.w3.org/2000/svg'
