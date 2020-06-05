@@ -1,7 +1,6 @@
 const Merge = require('webpack-merge');
 const CommonConfig = require('./webpack.common.js');
 
-const webpack = require('webpack');
 const path = require('path');
 const publicPath = '/build/';
 
@@ -18,6 +17,12 @@ module.exports = Merge(CommonConfig, {
     filename: '[name].bundle.js',
     publicPath: publicPath,
     sourceMapFilename: '[name].map',
+  },
+
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, '..', 'src'),
+    },
   },
 
   // module: {

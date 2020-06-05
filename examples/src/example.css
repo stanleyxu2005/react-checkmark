@@ -41,3 +41,16 @@ h4 {
   //border: 1px dotted #888;
   margin-top: 30px;
 }
+
+.debug {
+  border: 1px dotted red;
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.w-33 {
+  width: 33%
+}

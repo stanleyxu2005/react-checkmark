@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import './checkmark.less';
+import './checkmark.css';
 
 export const namedSizes = {
   small: 16,
@@ -16,9 +16,12 @@ export const namedSizes = {
   xxLarge: 96,
 };
 
-export const Checkmark = ({ size }) => {
+export const Checkmark = ({ size, color }) => {
   const actualSize = namedSizes[size] || size;
   const style = { width: actualSize, height: actualSize };
+  if (color) {
+    style['--checkmark-fill-color'] = color
+  }
 
   return (
     <svg
@@ -35,6 +38,7 @@ export const Checkmark = ({ size }) => {
 
 Checkmark.propTypes = {
   size: PropTypes.string | PropTypes.number,
+  color: PropTypes.string
 };
 
 Checkmark.defaultProps = {
