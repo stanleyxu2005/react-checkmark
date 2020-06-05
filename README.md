@@ -8,6 +8,7 @@ Animated checkmark for React
 import {Checkmark} from 'react-checkmark';
 
 // In your JSX
-<Checkmark size='large'/>
-<Checkmark size={80}/>
+<Checkmark size='large' />
+<Checkmark size={80} />
+<Checkmark size={80} color='blue' />
 ```
