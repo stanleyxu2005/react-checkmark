@@ -20,7 +20,7 @@ export const Checkmark = ({ size, color }) => {
   const actualSize = namedSizes[size] || size;
   const style = { width: actualSize, height: actualSize };
   if (color) {
-    style['--checkmark-fill-color'] = color
+    style['--checkmark-fill-color'] = color;
   }
 
   return (
@@ -37,8 +37,8 @@ export const Checkmark = ({ size, color }) => {
 };
 
 Checkmark.propTypes = {
-  size: PropTypes.string | PropTypes.number,
-  color: PropTypes.string
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  color: PropTypes.string,
 };
 
 Checkmark.defaultProps = {
