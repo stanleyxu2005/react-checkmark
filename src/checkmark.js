@@ -6,19 +6,20 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './checkmark.css';
 
-export const namedSizes = {
-  small: 16,
-  medium: 24,
-  large: 52,
-  xLarge: 72,
-  xxLarge: 96,
+const PREDEFINED_SIZE_MAP = {
+  small: '16px',
+  medium: '24px',
+  large: '52px',
+  xLarge: '72px',
+  xxLarge: '96px',
 };
 
-export const Checkmark = ({ size, color }) => {
-  const actualSize = namedSizes[size] || size;
-  const style = { width: actualSize, height: actualSize };
+export function Checkmark({ size, color }) {
+  const computedSize = PREDEFINED_SIZE_MAP[size] || size;
+  const style = { width: computedSize, height: computedSize };
   if (color) {
     style['--checkmark-fill-color'] = color;
   }
@@ -34,10 +35,10 @@ export const Checkmark = ({ size, color }) => {
       <path className='checkmark__check' fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8' />
     </svg>
   );
-};
+}
 
 Checkmark.propTypes = {
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  size: PropTypes.string,
   color: PropTypes.string,
 };
 
