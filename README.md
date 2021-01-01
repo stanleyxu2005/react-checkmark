@@ -42,7 +42,7 @@ render() {
   return (
     <>
       <Checkmark size='xxLarge' />
-      <Checkmark size={96} />
+      <Checkmark size='96px' />
     </>
   )
 }
@@ -53,8 +53,8 @@ render() {
 render() {
   return (
     <>
-      <Checkmark size={128} color='blue' />
-      <Checkmark size={256} color='#223344'/>
+      <Checkmark size='128px' color='blue' />
+      <Checkmark size='256px' color='#223344'/>
     </>
   )
 }
