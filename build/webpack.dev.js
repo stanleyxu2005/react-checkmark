@@ -7,13 +7,15 @@ const publicPath = '/build/';
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = Merge(CommonConfig, {
+  mode: 'development',
+
   entry: {
     vendor: ['react', 'react-dom'],
     app: './examples/src/example.js',
   },
 
   output: {
-    path: path.join(__dirname, 'examples/build'),
+    path: path.join(__dirname, '../examples/build'),
     filename: '[name].bundle.js',
     publicPath: publicPath,
     sourceMapFilename: '[name].map',
@@ -25,24 +27,9 @@ module.exports = Merge(CommonConfig, {
     },
   },
 
-  // module: {
-  //   rules: [
-      //     {
-      //       test: /\.less$/,
-      //       use: [
-      //         {
-      //           loader: 'style-loader', // creates style nodes from JS strings
-      //         },
-      //         {
-      //           loader: 'css-loader', // translates CSS into CommonJS
-      //         },
-      //         {
-      //           loader: 'less-loader', // compiles Less to CSS
-      //         },
-      //       ],
-      //     },
-  //   ],
-  // },
+  optimization: {
+    minimize: false,
+  },
 
   plugins: [
     new CleanWebpackPlugin(['./examples/build']),
