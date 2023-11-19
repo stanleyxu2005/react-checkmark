@@ -10,13 +10,13 @@ function App() {
     <div>
       <div className={'showcase d-flex'}>
         <h3 className='w-25'></h3>
-        <h3 className='w-25'></h3>
-        <h3 className='w-25'>color='blue'</h3>
-        <h3 className='w-25'>color='#223344'</h3>
+        <h3 className='w-25 text-center'>default</h3>
+        <h3 className='w-25 text-center'>color='blue'</h3>
+        <h3 className='w-25 text-center'>color='#223344'</h3>
       </div>
-      {sizes.map((size) => {
+      {sizes.map((size, i) => {
         return (
-          <div className={'showcase d-flex'}>
+          <div className={'showcase d-flex'} key={i}>
             <h3 className='w-25'>
               size={typeof size === 'string' ? `'${size}'` : `${size}px`}
             </h3>

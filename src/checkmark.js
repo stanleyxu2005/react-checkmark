@@ -38,7 +38,7 @@ export function Checkmark({ size, color }) {
 }
 
 Checkmark.propTypes = {
-  size: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   color: PropTypes.string,
 };
 
