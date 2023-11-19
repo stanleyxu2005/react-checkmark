@@ -9,6 +9,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const rootDir = path.resolve(__dirname, '..');
 
 module.exports = Merge(CommonConfig, {
+  mode: 'production',
+
   entry: {
     'react-checkmark': './src/checkmark.js',
     'react-checkmark.min': './src/checkmark.js',
