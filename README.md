@@ -1,4 +1,4 @@
-<h1 align="center">reach-checkmark</h1>
+<h1 align="center">react-checkmark</h1>
 <p align="center">
 Animated checkmark you already need for React
 </p>
