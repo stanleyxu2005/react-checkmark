@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import './checkmark.css';
 
-const PREDEFINED_SIZE_MAP = {
+export const PREDEFINED_SIZE_MAP = {
   small: '16px',
   medium: '24px',
   large: '52px',
