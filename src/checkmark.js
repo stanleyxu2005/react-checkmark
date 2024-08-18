@@ -18,12 +18,15 @@ const PREDEFINED_SIZE_MAP = {
   insane: '144px',
 };
 
-export function Checkmark({ size, color }) {
+export function Checkmark({ size = 'large', color }) {
   const computedSize = PREDEFINED_SIZE_MAP[size] || size;
-  const style = { width: computedSize, height: computedSize };
-  if (color) {
-    style['--checkmark-fill-color'] = color;
-  }
+  const style = {
+    width: computedSize,
+    height: computedSize,
+    ...(color && {
+      '--checkmark-fill-color': color,
+    }),
+  };
 
   return (
     <svg
@@ -41,8 +44,4 @@ export function Checkmark({ size, color }) {
 Checkmark.propTypes = {
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   color: PropTypes.string,
-};
-
-Checkmark.defaultProps = {
-  size: 'large',
 };
