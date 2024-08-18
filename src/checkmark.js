@@ -15,6 +15,7 @@ const PREDEFINED_SIZE_MAP = {
   large: '52px',
   xLarge: '72px',
   xxLarge: '96px',
+  insane: '144px',
 };
 
 export function Checkmark({ size, color }) {
