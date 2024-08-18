@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.0 - 2024-08-19
+
+- Remove `defaultProps`
+- Add new size variant `insane` (144px)
+- Update examples
+
 ## 2.0.0 - 2023-11-19
 
 - Breaking change: Set minimal React version to v17
