@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Checkmark, PREDEFINED_SIZE_MAP } from 'src/checkmark';
 
 import './example.css';
@@ -17,7 +17,7 @@ function App() {
       </div>
       {sizes.map((size, i) => {
         return (
-          <div className={'showcase d-flex'}>
+          <div className={'showcase d-flex'} key={`checkmark_size_${size}`}>
             <h3 className='w-25'>
               #{i} &nbsp; size='
               {typeof size === 'number' ? `${size}px` : size}'
@@ -30,6 +30,8 @@ function App() {
       })}
     </div>
   );
-};
+}
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<App />);
