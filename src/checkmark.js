@@ -5,8 +5,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import './checkmark.css';
 
 export const PREDEFINED_SIZE_MAP = {
@@ -40,8 +38,3 @@ export function Checkmark({ size = 'large', color }) {
     </svg>
   );
 }
-
-Checkmark.propTypes = {
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  color: PropTypes.string,
-};

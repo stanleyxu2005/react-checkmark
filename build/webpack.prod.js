@@ -44,12 +44,6 @@ module.exports = Merge(CommonConfig, {
       commonjs2: 'react',
       amd: 'react',
       root: 'react',
-    },
-    'prop-types': {
-      commonjs: 'prop-types',
-      commonjs2: 'prop-types',
-      amd: 'prop-types',
-      root: 'prop-types',
-    },
+    }
   },
 });
